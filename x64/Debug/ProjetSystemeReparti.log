@@ -1,0 +1,8 @@
+﻿  Main.cpp
+D:\SystemeReparti\ProjetSystemeReparti\Main.cpp(228): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+D:\SystemeReparti\ProjetSystemeReparti\Main.cpp(243): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+D:\SystemeReparti\ProjetSystemeReparti\Main.cpp(250): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+D:\SystemeReparti\ProjetSystemeReparti\Main.cpp(288): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+D:\SystemeReparti\ProjetSystemeReparti\Main.cpp(289): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+D:\SystemeReparti\ProjetSystemeReparti\Main.cpp(290): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+  ProjetSystemeReparti.vcxproj -> D:\SystemeReparti\ProjetSystemeReparti\x64\Debug\ProjetSystemeReparti.exe
