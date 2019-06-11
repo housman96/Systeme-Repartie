@@ -8,9 +8,7 @@ using namespace std;
 using namespace cv;
 using namespace cv::cuda;
 
-namespace myOpenCV {
-	int luminanceEqualization(Mat& src, Mat& res);
-}
+namespace myOpenCV {}
 
 class Main
 {
