@@ -1,0 +1,12 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Server.vcxproj, Socket.vcxproj, Test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Peer.cpp
+c:\users\hugor\desktop\improved windows socket mark_ii\server\test\peer.cpp(1): warning C4603: 'WIN32_LEAN_AND_MEAN': macro is not defined or definition is different after precompiled header use
+  c:\users\hugor\desktop\improved windows socket mark_ii\server\test\peer.cpp(1): note: Add macro to precompiled header instead of defining here
+  c:\users\hugor\desktop\improved windows socket mark_ii\server\test\peer.cpp(5): note: use of precompiled header
+c:\users\hugor\desktop\improved windows socket mark_ii\server\test\peer.cpp(2): warning C4603: '_CRT_SECURE_NO_DEPRECATE': macro is not defined or definition is different after precompiled header use
+  c:\users\hugor\desktop\improved windows socket mark_ii\server\test\peer.cpp(2): note: Add macro to precompiled header instead of defining here
+  c:\users\hugor\desktop\improved windows socket mark_ii\server\test\peer.cpp(5): note: use of precompiled header
+c:\users\hugor\desktop\improved windows socket mark_ii\server\test\peer.cpp(3): warning C4603: '_CRT_SECURE_NO_WARNINGS': macro is not defined or definition is different after precompiled header use
+  c:\users\hugor\desktop\improved windows socket mark_ii\server\test\peer.cpp(3): note: Add macro to precompiled header instead of defining here
+  c:\users\hugor\desktop\improved windows socket mark_ii\server\test\peer.cpp(5): note: use of precompiled header
+opencv_world410d.lib(opencv_world410d.dll) : fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'x86'

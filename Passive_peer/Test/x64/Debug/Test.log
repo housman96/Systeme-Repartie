@@ -1,0 +1,42 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Peer.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Passive_peer.cpp
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(1): warning C4603: 'WIN32_LEAN_AND_MEAN': macro is not defined or definition is different after precompiled header use
+  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(1): note: Add macro to precompiled header instead of defining here
+  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(5): note: use of precompiled header
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(2): warning C4603: '_CRT_SECURE_NO_DEPRECATE': macro is not defined or definition is different after precompiled header use
+  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(2): note: Add macro to precompiled header instead of defining here
+  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(5): note: use of precompiled header
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(3): warning C4603: '_CRT_SECURE_NO_WARNINGS': macro is not defined or definition is different after precompiled header use
+  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(3): note: Add macro to precompiled header instead of defining here
+  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(5): note: use of precompiled header
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(33): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(35): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(42): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(54): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(61): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(107): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(127): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(145): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(242): warning C4244: 'argument': conversion from 'SOCKET' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(250): warning C4244: 'argument': conversion from 'SOCKET' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(294): warning C4244: 'argument': conversion from 'SOCKET' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(299): warning C4244: 'argument': conversion from 'SOCKET' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(355): warning C4244: '=': conversion from 'SOCKET' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(391): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(392): warning C4244: 'argument': conversion from 'SOCKET' to 'int', possible loss of data
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(394): warning C4244: 'argument': conversion from 'SOCKET' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(397): warning C4244: '=': conversion from 'SOCKET' to 'int', possible loss of data
+  Test.vcxproj -> C:\Users\hugor\Desktop\Improved windows socket mark_III\Passive_peer\x64\Debug\Passive_Peer.exe
