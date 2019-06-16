@@ -1,10 +1,8 @@
 ﻿  Main.cpp
-D:\GameWork\Systeme Repatie\Main.cpp(3): error C2871: 'myOpenCV' : un espace de noms avec ce nom n'existe pas
-D:\GameWork\Systeme Repatie\Main.cpp(105): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-D:\GameWork\Systeme Repatie\Main.cpp(120): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
-D:\GameWork\Systeme Repatie\Main.cpp(127): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-D:\GameWork\Systeme Repatie\Main.cpp(165): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
-D:\GameWork\Systeme Repatie\Main.cpp(166): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
-D:\GameWork\Systeme Repatie\Main.cpp(167): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
-D:\GameWork\Systeme Repatie\Main.cpp(259): error C2065: 'on_trackbar' : identificateur non déclaré
-D:\GameWork\Systeme Repatie\Main.cpp(260): error C3861: 'on_trackbar' : identificateur introuvable
+D:\GameWork\Systeme Repatie\Main.cpp(125): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+D:\GameWork\Systeme Repatie\Main.cpp(140): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+D:\GameWork\Systeme Repatie\Main.cpp(147): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+D:\GameWork\Systeme Repatie\Main.cpp(185): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+D:\GameWork\Systeme Repatie\Main.cpp(186): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+D:\GameWork\Systeme Repatie\Main.cpp(187): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+  ProjetSystemeReparti.vcxproj -> D:\GameWork\Systeme Repatie\x64\Debug\ProjetSystemeReparti.exe
