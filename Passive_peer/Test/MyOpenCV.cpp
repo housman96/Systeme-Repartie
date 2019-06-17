@@ -1,9 +1,7 @@
 #include "pch.h"
 #include "MyOpenCV.h"
 
-
-namespace myOpenCV
-{
+namespace myOpenCV {
 	int luminanceEqualization(Mat& src, Mat& res) {
 		Mat imgTampon[3];
 		cvtColor(src, res, COLOR_BGR2YCrCb);
@@ -36,18 +34,19 @@ namespace myOpenCV
 		return 0;
 	}
 
-	int saturationSettingLocalThreaded(int param, int firstRow, int lastRow, Mat& img) {
 
+	int saturationSettingLocalThreaded(int param, int place, vector<Mat>& stack, Mat& img) {
+		if (img.dims == 0)
+			return 0;
+		int firstRow = 0;
+		int lastRow = img.rows;
 		int channels = img.channels();
-		int endCols = (img.cols) * channels;
+		int endCols = (img.cols * channels);
 		int startCols = 0;
+
 		if (img.isContinuous())
 		{
-
-			startCols = firstRow * endCols;
-			endCols *= lastRow;
-			//cout << startCols << "  " << endCols << endl;
-			firstRow = 0;
+			endCols = (endCols * lastRow) - 1;
 			lastRow = 0;
 		}
 
@@ -59,7 +58,7 @@ namespace myOpenCV
 		{
 			p = img.ptr<uchar>(i);
 
-			for (int j = startCols; j <= endCols - channels; j += channels) {
+			for (int j = startCols; j <= endCols; j += channels) {
 
 				/*BGR 2 HSV*/
 
@@ -118,9 +117,8 @@ namespace myOpenCV
 
 
 				/*Modification de la saturation*/
-				if (saturation + localParam < 1) {
+				if (saturation + localParam < 1)
 					saturation += localParam;
-				}
 				else {
 					saturation = 1;
 				}
@@ -180,49 +178,45 @@ namespace myOpenCV
 		return 0;
 	}
 
-	int saturationSettingThreadedSetup(int param, int firstRow, int lastRow, Mat & img, int threadNumber, vector<thread> & threads) {
-		int mid1;
-		int mid2;
-		if (threadNumber >= 2) {
-			mid1 = firstRow + (lastRow - firstRow) / 2;
-			mid2 = mid1 + 1;
-		}
-
-		if (threadNumber > 2) {
-
-			saturationSettingThreadedSetup(param, firstRow, mid1, img, threadNumber / 2, threads);
-			saturationSettingThreadedSetup(param, mid2, lastRow, img, (threadNumber % 2) + (threadNumber / 2), threads);
-		}
-		else {
-			if (threadNumber == 1) {
-				threads.push_back(thread(saturationSettingLocalThreaded, param, firstRow, lastRow, ref(img)));
-			}
-			if (threadNumber == 2) {
-				threads.push_back(thread(saturationSettingLocalThreaded, param, firstRow, mid1, ref(img)));
-				threads.push_back(thread(saturationSettingLocalThreaded, param, mid2, lastRow, ref(img)));
-			}
-		}
-		return 0;
-	}
 
 	int saturationSettingThreaded(Mat & src, Mat & res, int param) {
-		unsigned int n = std::thread::hardware_concurrency();
+		unsigned int threadNumber = std::thread::hardware_concurrency();
 		if (&res != &src)
 			res = src.clone();
+
+
 		vector<thread> threads = vector<thread>();
-		saturationSettingThreadedSetup(param, 0, res.rows, res, n, threads);
-		for (vector<thread>::iterator itThreads = threads.begin(); itThreads != threads.end(); itThreads++) {
-			(*itThreads).join();
+		Mat imgTampon;
+		Rect rect;
+		vector<Mat> stack = vector<Mat>(threadNumber);
+
+
+		for (int i = 0; i < threadNumber - 1; i++) {
+			rect = Rect(0, i * (res.rows / (threadNumber)), res.cols, (res.rows / (threadNumber)));
+			stack[i] = res(rect);
+			imgTampon = stack[i];
+			threads.push_back(thread(saturationSettingLocalThreaded, param, i, ref(stack), ref(stack[i])));
+		}
+
+		rect = Rect(0, (threadNumber - 1) * (res.rows / (threadNumber)), res.cols, res.rows - (threadNumber - 1) * (res.rows / (threadNumber)));
+		stack[threadNumber - 1] = res(rect);
+		imgTampon = stack[threadNumber - 1];
+		threads.push_back(thread(saturationSettingLocalThreaded, param, threadNumber - 1, ref(stack), ref(stack[threadNumber - 1])));
+
+
+		res = Mat(0, 0, CV_8UC3);
+
+		for (int i = 0; i < threads.size(); i++) {
+			threads[i].join();
+			res.push_back(stack[i]);
 		}
 
 		return 0;
 	}
 
 	int saturationSettingSocket(Mat & src, Mat & res, int param) {
-		if (&res != &src) {
+		if (&res != &src)
 			res = src.clone();
-		}
-			
 		Mat img1;
 		Mat img2;
 
@@ -235,9 +229,6 @@ namespace myOpenCV
 		saturationSettingThreaded(img1, img1, param);/*ICI TU DOIS REMPLACER CETTE FONCTION PAR TA SOCKET QUI DOIT APPELER CETTE FONCTION*/
 		saturationSettingThreaded(img2, img2, param);
 
-		//imshow("imageAfter", img1);
-		//imshow("image", img2);
-
 		res = Mat(0, 0, res.type());
 
 		res.push_back(img1);
@@ -245,4 +236,6 @@ namespace myOpenCV
 
 		return 0;
 	}
+
+
 }

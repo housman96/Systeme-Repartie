@@ -1,42 +1,52 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Peer.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(411,5): warning MSB8028: Le répertoire intermédiaire (x64\Debug\) contient des fichiers partagés provenant d'un autre projet (Peer.vcxproj). Cela peut entraîner un comportement de nettoyage et de régénération incorrect.
+  pch.cpp
+  MyOpenCV.cpp
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(109): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(128): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(135): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(173): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(174): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(175): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(194): warning C4018: '<' : incompatibilité signed/unsigned
   Passive_peer.cpp
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(1): warning C4603: 'WIN32_LEAN_AND_MEAN': macro is not defined or definition is different after precompiled header use
-  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(1): note: Add macro to precompiled header instead of defining here
-  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(5): note: use of precompiled header
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(2): warning C4603: '_CRT_SECURE_NO_DEPRECATE': macro is not defined or definition is different after precompiled header use
-  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(2): note: Add macro to precompiled header instead of defining here
-  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(5): note: use of precompiled header
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(3): warning C4603: '_CRT_SECURE_NO_WARNINGS': macro is not defined or definition is different after precompiled header use
-  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(3): note: Add macro to precompiled header instead of defining here
-  c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(5): note: use of precompiled header
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(33): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(35): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(42): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(54): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(61): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(107): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(127): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(145): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(242): warning C4244: 'argument': conversion from 'SOCKET' to 'const _Ty', possible loss of data
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(1): warning C4603: 'WIN32_LEAN_AND_MEAN' : la macro n'est pas définie ou la définition est différente après l'utilisation d'un en-tête précompilé
+  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(1): note: Ajoutez la macro à l'en-tête précompilé au lieu de définir ici
+  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(5): note: utilisation d'un en-tête précompilé
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(2): warning C4603: '_CRT_SECURE_NO_DEPRECATE' : la macro n'est pas définie ou la définition est différente après l'utilisation d'un en-tête précompilé
+  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(2): note: Ajoutez la macro à l'en-tête précompilé au lieu de définir ici
+  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(5): note: utilisation d'un en-tête précompilé
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(3): warning C4603: '_CRT_SECURE_NO_WARNINGS' : la macro n'est pas définie ou la définition est différente après l'utilisation d'un en-tête précompilé
+  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(3): note: Ajoutez la macro à l'en-tête précompilé au lieu de définir ici
+  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(5): note: utilisation d'un en-tête précompilé
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(33): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(35): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(42): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(52): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(54): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(61): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(107): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(127): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(145): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(242): warning C4244: 'argument' : conversion de 'SOCKET' en 'const _Ty', perte possible de données
           with
           [
               _Ty=int
           ]
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(250): warning C4244: 'argument': conversion from 'SOCKET' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(294): warning C4244: 'argument': conversion from 'SOCKET' to 'const _Ty', possible loss of data
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(250): warning C4244: 'argument' : conversion de 'SOCKET' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(294): warning C4244: 'argument' : conversion de 'SOCKET' en 'const _Ty', perte possible de données
           with
           [
               _Ty=int
           ]
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(299): warning C4244: 'argument': conversion from 'SOCKET' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(355): warning C4244: '=': conversion from 'SOCKET' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(391): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(392): warning C4244: 'argument': conversion from 'SOCKET' to 'int', possible loss of data
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(394): warning C4244: 'argument': conversion from 'SOCKET' to 'const _Ty', possible loss of data
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(299): warning C4244: 'argument' : conversion de 'SOCKET' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(355): warning C4244: '=' : conversion de 'SOCKET' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(391): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(392): warning C4244: 'argument' : conversion de 'SOCKET' en 'int', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(394): warning C4244: 'argument' : conversion de 'SOCKET' en 'const _Ty', perte possible de données
           with
           [
               _Ty=int
           ]
-c:\users\hugor\desktop\improved windows socket mark_iii\passive_peer\test\passive_peer.cpp(397): warning C4244: '=': conversion from 'SOCKET' to 'int', possible loss of data
-  Test.vcxproj -> C:\Users\hugor\Desktop\Improved windows socket mark_III\Passive_peer\x64\Debug\Passive_Peer.exe
+D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(397): warning C4244: '=' : conversion de 'SOCKET' en 'int', perte possible de données
+  Génération de code en cours...
+  Test.vcxproj -> D:\GameWork\Systeme Repatie\Passive_peer\x64\Debug\Passive_Peer.exe

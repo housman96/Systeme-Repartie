@@ -39,8 +39,8 @@ void on_trackbar(int, void*)
 
 	Rect rect;
 	Mat imageTampon;
-	for (int i =0; i < peers.size(); i++) {
-		rect = Rect(0, i*(newImg.rows / (peers.size())), newImg.cols, (newImg.rows / (peers.size())));
+	for (int i = 0; i < peers.size(); i++) {
+		rect = Rect(0, i * (newImg.rows / (peers.size())), newImg.cols, (newImg.rows / (peers.size())));
 		imageTampon = newImg(rect);
 
 		// send to peers
@@ -49,7 +49,7 @@ void on_trackbar(int, void*)
 		do_send(peers[i], &alpha_slider, sizeof(int), 0);
 	}
 
-	rect = Rect(0, peers.size()*(newImg.rows / peers.size()), newImg.cols, newImg.rows-peers.size()*(newImg.rows / peers.size()));
+	rect = Rect(0, peers.size() * (newImg.rows / peers.size()), newImg.cols, newImg.rows - peers.size() * (newImg.rows / peers.size()));
 	Mat imageTamponReste = newImg(rect);
 
 	saturationSettingThreaded(imageTamponReste, imageTamponReste, alpha_slider);
@@ -78,7 +78,7 @@ void on_trackbar(int, void*)
 
 
 
-int do_receive(int sockfd, void *buf, size_t len, int flags)
+int do_receive(int sockfd, void* buf, size_t len, int flags)
 {
 	size_t to_read = len;
 	char* bufptr = (char*)buf;
@@ -120,8 +120,8 @@ int do_receive_image(int sockfd)
 {
 	char buff[10240];
 	int size, recv = 0;
-	FILE *image;
-	
+	FILE* image;
+
 	image = fopen("tmp.jpg", "wb");
 	if (image == NULL) {
 		printf("Error has occurred. Image file could not be opened\n");
@@ -135,14 +135,14 @@ int do_receive_image(int sockfd)
 		recv += do_receive(sockfd, &buff, sizeof(buff), 0);
 		fwrite(&buff, sizeof(char), sizeof(buff), image);
 	}
-	
+
 	fclose(image);
 	return 1;
 }
 
 int do_send_image(int sockfd, const char* filename)
 {
-	FILE *image;
+	FILE* image;
 	int size, read;
 	char buff[10240];
 
@@ -238,7 +238,7 @@ int __cdecl main(void)
 	SOCKET listen_socket = INVALID_SOCKET;
 	SOCKET peers_socket = INVALID_SOCKET;
 
-	struct addrinfo *result = NULL, *ptr = NULL;
+	struct addrinfo* result = NULL, * ptr = NULL;
 	struct addrinfo hints;
 
 	int recvbuflen = DEFAULT_BUFLEN;
@@ -310,9 +310,9 @@ int __cdecl main(void)
 		else {
 			printf("I'm the second one !\n");
 		}
-		
+
 		// connect to everyone already here
-		for(int i = 1; i < nb_already_connected + 1; i++)
+		for (int i = 1; i < nb_already_connected + 1; i++)
 		{
 			printf("Try to connect to port %d\n", atoi(DEFAULT_PORT) + i);
 
@@ -368,20 +368,20 @@ int __cdecl main(void)
 
 
 
-	img = imread("C:\\Users\\hugor\\Downloads\\ironman.jpg");
+	img = imread("ironman.jpg");
 	setUseOptimized(true);
-	
+
 	if (!img.empty())
 	{
 		namedWindow("image", WINDOW_NORMAL);
 		namedWindow("imageAfter", WINDOW_NORMAL);
-	
+
 		alpha_slider = 0;
-	
+
 		createTrackbar("test", "imageAfter", &alpha_slider, alpha_slider_max, on_trackbar);
 		imshow("image", img);
 		on_trackbar(alpha_slider, 0);
-	
+
 		waitKey(0);
 	}
 
@@ -521,11 +521,11 @@ int __cdecl main(void)
 	closesocket(listen_socket);
 	WSACleanup();
 
-	for(int i = 0; i <= max_sd; ++i)
+	for (int i = 0; i <= max_sd; ++i)
 	{
 		if (FD_ISSET(i, &sock_read)) {
 			closesocket(i);
-		}	
+		}
 	}
 
 	return EXIT_SUCCESS;

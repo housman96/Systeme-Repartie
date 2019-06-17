@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>  
 #include <vector>
+#include <thread> 
 
 using namespace std;
 using namespace cv;
@@ -14,11 +15,11 @@ namespace myOpenCV
 
 	int saturationSetting(Mat& src, Mat& res, int param);
 
-	int saturationSettingLocalThreaded(int param, int firstRow, int lastRow, Mat& img);
+	int saturationSettingLocalThreaded(int param, int place, vector<Mat>& stack, Mat& img);
 
-	int saturationSettingThreadedSetup(int param, int firstRow, int lastRow, Mat & img, int threadNumber, vector<thread> & threads);
+	int saturationSettingThreaded(Mat& src, Mat& res, int param);
 
-	int saturationSettingThreaded(Mat & src, Mat & res, int param);
+	int saturationSettingSocket(Mat& src, Mat& res, int param);
 
-	int saturationSettingSocket(Mat & src, Mat & res, int param);
+
 }
