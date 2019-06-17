@@ -1,52 +1,10 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(411,5): warning MSB8028: Le répertoire intermédiaire (x64\Debug\) contient des fichiers partagés provenant d'un autre projet (Peer.vcxproj). Cela peut entraîner un comportement de nettoyage et de régénération incorrect.
-  pch.cpp
   MyOpenCV.cpp
-D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(109): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(128): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(135): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(173): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(174): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(175): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(194): warning C4018: '<' : incompatibilité signed/unsigned
-  Passive_peer.cpp
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(1): warning C4603: 'WIN32_LEAN_AND_MEAN' : la macro n'est pas définie ou la définition est différente après l'utilisation d'un en-tête précompilé
-  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(1): note: Ajoutez la macro à l'en-tête précompilé au lieu de définir ici
-  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(5): note: utilisation d'un en-tête précompilé
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(2): warning C4603: '_CRT_SECURE_NO_DEPRECATE' : la macro n'est pas définie ou la définition est différente après l'utilisation d'un en-tête précompilé
-  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(2): note: Ajoutez la macro à l'en-tête précompilé au lieu de définir ici
-  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(5): note: utilisation d'un en-tête précompilé
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(3): warning C4603: '_CRT_SECURE_NO_WARNINGS' : la macro n'est pas définie ou la définition est différente après l'utilisation d'un en-tête précompilé
-  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(3): note: Ajoutez la macro à l'en-tête précompilé au lieu de définir ici
-  D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(5): note: utilisation d'un en-tête précompilé
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(33): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(35): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(42): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(52): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(54): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(61): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(107): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(127): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(145): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(242): warning C4244: 'argument' : conversion de 'SOCKET' en 'const _Ty', perte possible de données
-          with
-          [
-              _Ty=int
-          ]
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(250): warning C4244: 'argument' : conversion de 'SOCKET' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(294): warning C4244: 'argument' : conversion de 'SOCKET' en 'const _Ty', perte possible de données
-          with
-          [
-              _Ty=int
-          ]
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(299): warning C4244: 'argument' : conversion de 'SOCKET' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(355): warning C4244: '=' : conversion de 'SOCKET' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(391): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(392): warning C4244: 'argument' : conversion de 'SOCKET' en 'int', perte possible de données
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(394): warning C4244: 'argument' : conversion de 'SOCKET' en 'const _Ty', perte possible de données
-          with
-          [
-              _Ty=int
-          ]
-D:\GameWork\Systeme Repatie\Passive_peer\Test\Passive_peer.cpp(397): warning C4244: '=' : conversion de 'SOCKET' en 'int', perte possible de données
-  Génération de code en cours...
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(125): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(144): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(151): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(190): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(191): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(192): warning C4244: '=' : conversion de 'float' en 'uchar', perte possible de données
+D:\GameWork\Systeme Repatie\Passive_peer\Test\MyOpenCV.cpp(212): warning C4018: '<' : incompatibilité signed/unsigned
   Test.vcxproj -> D:\GameWork\Systeme Repatie\Passive_peer\x64\Debug\Passive_Peer.exe

@@ -2,30 +2,37 @@
 #include "MyOpenCV.h"
 
 namespace myOpenCV {
+
+	/*FONCTIONS BASIQUES*/
+
+	//luminanceEqualization egalise la luminance de l'image src et dépose le résultat dans res
 	int luminanceEqualization(Mat& src, Mat& res) {
 		Mat imgTampon[3];
-		cvtColor(src, res, COLOR_BGR2YCrCb);
-		split(res, imgTampon);
-		equalizeHist(imgTampon[0], imgTampon[0]);
-		merge(imgTampon, 3, res);
+		cvtColor(src, res, COLOR_BGR2YCrCb);		//on passe l'image en YCrCb
+		split(res, imgTampon);						//on récupére les 3 channels de l'image
+		equalizeHist(imgTampon[0], imgTampon[0]);	//on egalise le channel de luminance
+		merge(imgTampon, 3, res);					//on récupére l'image originel
 		cvtColor(res, res, COLOR_YCrCb2BGR);
 		return 0;
 	}
 
+	//luminanceNormalisation normalise la luminance de l'image src et dépose le résultat dans res
 	int luminanceNormalisation(Mat& src, Mat& res) {
 		Mat imgTampon[3];
-		cvtColor(src, res, COLOR_BGR2YCrCb);
-		split(res, imgTampon);
-		normalize(imgTampon[0], imgTampon[0], 0, 255, NORM_MINMAX);
-		merge(imgTampon, 3, res);
+		cvtColor(src, res, COLOR_BGR2YCrCb);							//on passe l'image en YCrCb
+		split(res, imgTampon);											//on récupére les 3 channels de l'image
+		normalize(imgTampon[0], imgTampon[0], 0, 255, NORM_MINMAX);		//on normalise le channel de luminance
+		merge(imgTampon, 3, res);										//on récupére l'image originel
 		cvtColor(res, res, COLOR_YCrCb2BGR);
 		return 0;
 	}
 
+	//saturationSetting ajoute param a la valeur de saturation de l'image src et dépose le resultats dans res (fonction non optimisee)
 	int saturationSetting(Mat& src, Mat& res, int param) {
 		Mat imgTampon[3];
 		cvtColor(src, res, COLOR_BGR2HSV);
 		MatIterator_<Vec3b> it, end;
+		//on parcours les pixels et on ajoute param au channel saturation
 		for (it = res.begin<Vec3b>(), end = res.end<Vec3b>(); it != end; ++it)
 		{
 			(*it)[1] += param;
@@ -34,8 +41,11 @@ namespace myOpenCV {
 		return 0;
 	}
 
+	/*FONCTIONS OPTIMISEES*/
 
-	int saturationSettingLocalThreaded(int param, int place, vector<Mat>& stack, Mat& img) {
+
+	//saturationSetting ajoute param a la valeur de saturation de l'image src 
+	int saturationSettingOptimized(int param, Mat& img) {
 		if (img.dims == 0)
 			return 0;
 		int firstRow = 0;
@@ -44,6 +54,7 @@ namespace myOpenCV {
 		int endCols = (img.cols * channels);
 		int startCols = 0;
 
+		//on modifie le parcour de l'image si celle-ci est continu
 		if (img.isContinuous())
 		{
 			endCols = (endCols * lastRow) - 1;
@@ -52,8 +63,9 @@ namespace myOpenCV {
 
 		uchar* p;
 
-		float localParam = (float)param / 255;
+		float localParam = (float)param / 255;		//parametre à ajouter à la saturation
 
+		//parcour des lignes de l'image
 		for (int i = firstRow; i <= lastRow; i++)
 		{
 			p = img.ptr<uchar>(i);
@@ -62,6 +74,7 @@ namespace myOpenCV {
 
 				/*BGR 2 HSV*/
 
+				//on récupére les valeurs BGR
 				uchar& bU = p[j + 2];
 				uchar& gU = p[j + 1];
 				uchar& rU = p[j];
@@ -73,6 +86,7 @@ namespace myOpenCV {
 				float min;
 				float max;
 
+				//on récupére les valeurs min et max des channels BGR
 				if (r >= g && r >= b) {
 					max = r;
 				}
@@ -98,6 +112,8 @@ namespace myOpenCV {
 
 				float teinture;
 
+
+				//on récupére les valeurs HSV
 				if (max != 0) {
 					saturation = 1.f - (min / max);
 				}
@@ -170,6 +186,7 @@ namespace myOpenCV {
 				g += m;
 				b += m;
 
+				//on enregistre les nouvelles valeurs BGR dans l'image
 				rU = r * 255;
 				gU = g * 255;
 				bU = b * 255;
@@ -179,33 +196,33 @@ namespace myOpenCV {
 	}
 
 
+	//saturationSettingThreaded ajoute param a la valeur de saturation de l'image src(version Threaded) 
 	int saturationSettingThreaded(Mat & src, Mat & res, int param) {
-		unsigned int threadNumber = std::thread::hardware_concurrency();
+		unsigned int threadNumber = std::thread::hardware_concurrency();	//nombre de Thread possibles
+
+		//on ne clone src dans res que si ils sont différents
 		if (&res != &src)
 			res = src.clone();
 
-
 		vector<thread> threads = vector<thread>();
-		Mat imgTampon;
 		Rect rect;
 		vector<Mat> stack = vector<Mat>(threadNumber);
 
-
+		//on crée toutes les sous-imges sur lesquels les threads vont travailler
 		for (int i = 0; i < threadNumber - 1; i++) {
-			rect = Rect(0, i * (res.rows / (threadNumber)), res.cols, (res.rows / (threadNumber)));
-			stack[i] = res(rect);
-			imgTampon = stack[i];
-			threads.push_back(thread(saturationSettingLocalThreaded, param, i, ref(stack), ref(stack[i])));
+			rect = Rect(0, i * (res.rows / (threadNumber)), res.cols, (res.rows / (threadNumber)));		//rectangle contenant l'image voulu
+			stack[i] = res(rect);																		//sauvegarde de la sous-image
+			threads.push_back(thread(saturationSettingOptimized, param, ref(stack[i])));				//on sauvegarde le thread
 		}
 
 		rect = Rect(0, (threadNumber - 1) * (res.rows / (threadNumber)), res.cols, res.rows - (threadNumber - 1) * (res.rows / (threadNumber)));
 		stack[threadNumber - 1] = res(rect);
-		imgTampon = stack[threadNumber - 1];
-		threads.push_back(thread(saturationSettingLocalThreaded, param, threadNumber - 1, ref(stack), ref(stack[threadNumber - 1])));
+		threads.push_back(thread(saturationSettingOptimized, param, ref(stack[threadNumber - 1])));
 
 
-		res = Mat(0, 0, CV_8UC3);
+		res = Mat(0, 0, CV_8UC3);		//on crée une nouvelle image
 
+		//on attend la fin de chaque threads et on les push dans l'image res
 		for (int i = 0; i < threads.size(); i++) {
 			threads[i].join();
 			res.push_back(stack[i]);
@@ -213,29 +230,5 @@ namespace myOpenCV {
 
 		return 0;
 	}
-
-	int saturationSettingSocket(Mat & src, Mat & res, int param) {
-		if (&res != &src)
-			res = src.clone();
-		Mat img1;
-		Mat img2;
-
-		Rect rect1 = Rect(0, 0, res.cols, res.rows / 2);
-		img1 = res(rect1).clone();
-
-		Rect rect2 = Rect(0, (res.rows / 2) + 1, res.cols, res.rows - 1 - (res.rows / 2));
-		img2 = res(rect2).clone();
-
-		saturationSettingThreaded(img1, img1, param);/*ICI TU DOIS REMPLACER CETTE FONCTION PAR TA SOCKET QUI DOIT APPELER CETTE FONCTION*/
-		saturationSettingThreaded(img2, img2, param);
-
-		res = Mat(0, 0, res.type());
-
-		res.push_back(img1);
-		res.push_back(img2);
-
-		return 0;
-	}
-
 
 }

@@ -15,12 +15,8 @@ namespace myOpenCV
 
 	int saturationSetting(Mat& src, Mat& res, int param);
 
-	int saturationSettingLocalThreaded(int param, int place, vector<Mat>& stack, Mat& img);
+	int saturationSettingOptimized(int param, Mat& img);
 
 	int saturationSettingThreaded(Mat& src, Mat& res, int param);
-
-	int saturationSettingSocket(Mat& src, Mat& res, int param);
-
-
 }
 
